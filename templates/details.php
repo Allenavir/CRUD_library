@@ -1,10 +1,3 @@
-<?php
-
-$link=new PDO("mysql:host=localhost;dbname=blog_vincent;charset=utf8",'blog_vincent','123');
-$id=$_GET['id'];
-$donnees=$link->query("SELECT * FROM post WHERE id=$id");
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,13 +12,14 @@ $donnees=$link->query("SELECT * FROM post WHERE id=$id");
 
     <?php 
  
-            foreach ($donnees as $row)
+        foreach ($post as $row)
         {
     ?>      <h2>Details de l'article n°<?php echo $row['id']; ?></h2>
             <p>
             <strong>Titre </strong> : <?php echo $row['title']; ?><br/>
             <strong>Contenu </strong>  <?php echo $row['description']; ?> <br />       
             </p> 
+            <a href="index.php">Acceuil</a>
     <?php 
             
       }

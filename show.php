@@ -2,7 +2,7 @@
 
 require_once 'model.php';
 
-$posts=get_all_posts();
+$post=get_post_by_id($_GET['id']);
 
 // include the HTML presentation code
-require 'templates/list.php';
+require 'templates/details.php';
