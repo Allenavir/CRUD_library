@@ -21,10 +21,10 @@ $donnees=$link->query("SELECT * FROM post WHERE id=$id");
  
             foreach ($donnees as $row)
         {
-    ?>      <h2>Details de l'article <?php echo $row['id']; ?></h2>
+    ?>      <h2>Details de l'article n°<?php echo $row['id']; ?></h2>
             <p>
-            <strong>Titre</strong> : <?php echo $row['title']; ?><br/>
-            Contenu :  <?php echo $row['description']; ?> <br />       
+            <strong>Titre </strong> : <?php echo $row['title']; ?><br/>
+            <strong>Contenu </strong>  <?php echo $row['description']; ?> <br />       
             </p> 
     <?php 
             
