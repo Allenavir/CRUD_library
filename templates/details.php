@@ -2,17 +2,33 @@
 
 <?php
     foreach ($post as $row)
-    {
- 
-        $title=$row['title']?>
+    {  
+        $title=$row['titre']?>
 
-        <h2>Details de l'article n°<?php echo $row['id']; ?></h2>
+        <h2><?php echo $row['titre']; ?></h2>
         <p>
-        <strong>Titre </strong> : <?php echo $row['title']; ?><br/>
-        <strong>Publié le </strong> : <?=$row['date']?><br/>
-        <strong>Contenu </strong> :  <?php echo $row['description']; ?> <br />       
+        <img src=<?=$row['image']?> /><br/>
+        <strong>Auteur </strong> : <?=$row['auteur']?><br/></br>
+        <strong>Contenu </strong> :  <?php echo $row['description']; ?> <br/> <br/>        
+               
+
+        <?php if($row['Statut']==0) 
+        { ?>
+        <p>Le livre est actuellement disponible<p><br/>  
+
+        <?php 
+        }
+        if($row['Statut']==1)
+        { ?>
+        <p> Le livre n'est actuellement pas disponible <p><br/>
+        
+        <?php } ?>
+
+        <a href="update.php?id=<?=$row['id']; ?>">Modifier ce livre </a> </br>
+        <a href="delete.php?id=<?=$row['id']; ?>">Supprimer ce livre </a> 
+
         </p> 
-        <a href="/blogv1/index.php">Acceuil</a>
+        <a href="/CRUD_library/index.php">Acceuil</a>
 
 <?php         
     }
