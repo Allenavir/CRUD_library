@@ -1,19 +1,19 @@
 <?php
 
 // load and initialize any global libraries
-require_once 'model.php';
-require_once 'controllers.php';
+require_once 'models/model.php';
+require_once 'Controller/controllers.php';
 
 // route the request internally
 $uri=parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
-if('/blog/index.php'=== $uri)
+if('/blogv1/index.php'=== $uri)
     {
         list_action();
     }
 
-else if('/blog/index.php/show.php'=== $uri && isset($_GET['id']))
+else if('/blogv1/index.php/show.php'=== $uri && isset($_GET['id']))
     {
         show_action($_GET['id']);
     }
